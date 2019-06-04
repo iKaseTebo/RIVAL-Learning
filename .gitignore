@@ -1,0 +1,6 @@
+.git/
+.idea/
+nginx-conf/ssl/
+app/node_modules/
+database
+.env
