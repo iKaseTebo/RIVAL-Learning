@@ -129,7 +129,7 @@ they only reach github after you run the actual push command.
 
 > git push -u origin <your_branch_name>
 
-**Don't Push to Master**
+**!! Don't Push to Master !!**
 
 Now your code changes have been pushed up to github and stored on your branch that you created.
 
