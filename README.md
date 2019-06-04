@@ -28,12 +28,6 @@ then run
 
 > composer install
 
-after that  
-
-> cd ..
-
-> docker-compose up -d
-
 
 # Controllers 
 https://laravel.com/docs/5.8/controllers
