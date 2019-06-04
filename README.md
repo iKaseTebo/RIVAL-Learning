@@ -32,12 +32,12 @@ then run
 # Controllers 
 https://laravel.com/docs/5.8/controllers
 
-app > app > Http > Controllers
+> app > app > Http > Controllers
 
 # Models
  https://laravel.com/docs/5.8/eloquent
  
-app > app > Models 
+> app > app > Models 
 
 # Views ( The Pages )
 https://laravel.com/docs/5.8/views 
@@ -45,7 +45,7 @@ https://laravel.com/docs/5.8/views
 https://laravel.com/docs/5.8/blade
 
 
-app > resources > views
+> app > resources > views
 
 Layouts > This is the overall layout for the entire application, 
 all the pages will be extended off of the app layout unless a 
@@ -59,7 +59,7 @@ for every new page, these will have @includes() that bring in partials. Whenever
 views, make it a partial and then @include() it
 
 # Resources
-app > resources
+> app > resources
 
 Assets >
  - js
@@ -72,7 +72,7 @@ Lang > Don't worry about lang, just don't mess with it.
 
 
 # Public
-app > public
+> app > public
 
 There's no reason to touch or change anything in here because 
 this all gets generated based on what you have in your resource folder, just work in 
@@ -81,7 +81,7 @@ your resource folder, always.
 # Routes
 https://laravel.com/docs/5.8/routing
 
-app > routes
+> app > routes
 
 This is how the server knows what to give the client.
 
