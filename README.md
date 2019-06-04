@@ -3,8 +3,6 @@ Learning Platform For R I V A L Guildies
 
 https://laravel.com/docs/5.8
 
-https://laravel.com/docs/5.8/blade
-
 https://laravel.com/docs/5.8/requests
 
 https://laravel.com/docs/5.8/responses
@@ -48,7 +46,8 @@ app > app > Http > Controllers
 app > app > Models 
 
 # Views ( The Pages )
-https://laravel.com/docs/5.8/views
+https://laravel.com/docs/5.8/views https://laravel.com/docs/5.8/blade
+
 
 app > resources > views
 
