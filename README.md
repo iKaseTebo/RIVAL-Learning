@@ -1,7 +1,6 @@
 # RIVAL-Learning
 Learning Platform For R I V A L Guildies
 
-# FIRST THINGS FIRST
 https://laravel.com/docs/5.8
 
 https://laravel.com/docs/5.8/blade
@@ -12,7 +11,7 @@ https://laravel.com/docs/5.8/responses
 
 https://laravel.com/docs/5.8/views
 
-
+# FIRST THINGS FIRST
 This part will be tricky. 
 You'll need to open cmder and "CD" to the location where you pulled the repo
 
