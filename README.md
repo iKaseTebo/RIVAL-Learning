@@ -112,14 +112,16 @@ This will be how you setup a git repository, you will need to find the reference
 > git pull origin master
 
 At this point you will have pulled master to your local. You will need to "checkout"
-a new branch so that it doesn't affect master
+a new branch so that it doesn't affect master. -b designates that you would like to create a new branch.
+without -b you will just checkout an existing branch if there is one.
 
 > git checkout -b <new_branch_name>
 
 Now you are on your new branch and any changes made here cannot affect master until a PR
 is made and code review has happened.
 
-After you have made changes you will need to push your changes back up to github.
+After you have made changes you will need to push your changes back up to github, 
+they only reach github after you run the actual push command.
 
 > git add -A
 
@@ -128,5 +130,6 @@ After you have made changes you will need to push your changes back up to github
 > git push -u origin <your_branch_name>
 
 **Don't Push to Master**
+
 Now your code changes have been pushed up to github and stored on your branch that you created.
 
