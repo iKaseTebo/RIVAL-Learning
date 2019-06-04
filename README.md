@@ -62,10 +62,10 @@ views, make it a partial and then @include() it
 > app > resources
 
 Assets >
- - js
+ - js - 
     This is where you will create any new javascript files and then import them into the app.js to be executed.
- - sass
-    This is where you will create and custom styles for the html pages.
+ - sass -
+    This is where you will create any custom styles for the html pages.
 
 Lang > Don't worry about lang, just don't mess with it.
 
