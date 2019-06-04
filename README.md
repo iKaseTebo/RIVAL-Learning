@@ -80,7 +80,8 @@ Lang > Don't worry about lang, just don't mess with it.
 app > public
 
 There's no reason to touch or change anything in here because 
-this all gets generated based on what you have in your resource folder
+this all gets generated based on what you have in your resource folder, just work in 
+your resource folder, always.
 
 # Routes
 https://laravel.com/docs/5.8/routing
