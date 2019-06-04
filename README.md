@@ -103,7 +103,7 @@ GET - POST - PATCH - PUT - DELETE - OPTIONS
 These each do different things, find the specific one for your purpose
 
 # Version Control
-This will be how you setup a git repository from your directory in **Cmder**, you will need to find the reference for the repo on github.
+This will be how you setup a git repository from your directory in **Cmder**. You will need to find the reference for the repo on github.
 
 > git init
 
