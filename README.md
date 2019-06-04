@@ -102,3 +102,31 @@ GET - POST - PATCH - PUT - DELETE - OPTIONS
 
 These each do different things, find the specific one for your purpose
 
+# Version Control
+This will be how you setup a git repository, you will need to find the reference for the repo on github.
+
+> git init
+
+> git remote add origin < reference for repo >
+
+> git pull origin master
+
+At this point you will have pulled master to your local. You will need to "checkout"
+a new branch so that it doesn't affect master
+
+> git checkout -b <new_branch_name>
+
+Now you are on your new branch and any changes made here cannot affect master until a PR
+is made and code review has happened.
+
+After you have made changes you will need to push your changes back up to github.
+
+> git add -A
+
+> git commit -m "Commit Message Here, something about what you did"
+
+> git push -u origin <your_branch_name>
+
+**Don't Push to Master**
+Now your code changes have been pushed up to github and stored on your branch that you created.
+
