@@ -43,7 +43,9 @@ https://laravel.com/docs/5.8/controllers
 
 app > app > Http > Controllers
 
-# Models 
+# Models
+ https://laravel.com/docs/5.8/eloquent
+ 
 app > app > Models 
 
 # Views ( The Pages )
