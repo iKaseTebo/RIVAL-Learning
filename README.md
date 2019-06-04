@@ -9,7 +9,6 @@ https://laravel.com/docs/5.8/requests
 
 https://laravel.com/docs/5.8/responses
 
-https://laravel.com/docs/5.8/views
 
 # FIRST THINGS FIRST
 This part will be tricky. 
@@ -49,6 +48,8 @@ app > app > Http > Controllers
 app > app > Models 
 
 # Views ( The Pages )
+https://laravel.com/docs/5.8/views
+
 app > resources > views
 
 Layouts > This is the overall layout for the entire application, 
@@ -82,6 +83,8 @@ There's no reason to touch or change anything in here because
 this all gets generated based on what you have in your resource folder
 
 # Routes
+https://laravel.com/docs/5.8/routing
+
 app > routes
 
 This is how the server knows what to give the client.
@@ -103,4 +106,3 @@ GET - POST - PATCH - PUT - DELETE - OPTIONS
 
 These each do different things, find the specific one for your purpose
 
-https://laravel.com/docs/5.8/routing
