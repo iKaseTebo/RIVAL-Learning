@@ -97,9 +97,9 @@ the route would be something like
 Route::get('/{username}', 'profileController@index')->name('user.profile');
 
 This tells the server that if there's anything after the 
-slash it's a username and it will send it to the**profileController**
-and run the function index in the**profileController**, which would then return
-the profile**view** to the client.
+slash it's a username and it will send it to the **profileController**
+and run the function index in the **profileController**, which would then return
+the profile **view** to the client.
 
 **There are multiple types of routes**
 
