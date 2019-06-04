@@ -2,7 +2,16 @@
 Learning Platform For R I V A L Guildies
 
 # FIRST THINGS FIRST
-https://cmder.net/
+https://laravel.com/docs/5.8
+
+https://laravel.com/docs/5.8/blade
+
+https://laravel.com/docs/5.8/requests
+
+https://laravel.com/docs/5.8/responses
+
+https://laravel.com/docs/5.8/views
+
 
 This part will be tricky. 
 You'll need to open cmder and "CD" to the location where you pulled the repo
@@ -31,6 +40,8 @@ after that
 
 
 # Controllers 
+https://laravel.com/docs/5.8/controllers
+
 app > app > Http > Controllers
 
 # Models 
