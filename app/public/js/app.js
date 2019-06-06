@@ -805,8 +805,9 @@ var App = function () {
     }, {
         key: 'eventListeners',
         value: function eventListeners() {
+            var self = this;
             this.container.addEventListener('click', function () {
-                console.log('Clicked on Container');
+                self.consoleUser();
             });
         }
     }]);
@@ -843,6 +844,7 @@ var User = function () {
         this.age = null;
         var self = this;
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(route('test')['template']).then(function (response) {
+            console.log(response);
             self.first_name = response['data']['data']['first_name'];
             self.last_name = response['data']['data']['last_name'];
             self.age = response['data']['data']['age'];

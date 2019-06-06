@@ -56,8 +56,16 @@
 </head>
 
 <body>
+@if(Route::getCurrentRoute()->getName() !== 'zalneor')
+    @include('partials._header')
+@endif
 
 @yield('content')
+
+
+@if(Route::getCurrentRoute()->getName() !== 'zalneor')
+    @include('partials._footer')
+@endif
 
 <!-- Object Fit Polyfill -->
 <script src="{{asset('vendor/object-fit-images/dist/ofi.min.js')}}"></script>

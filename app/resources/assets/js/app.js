@@ -1,6 +1,6 @@
 // Import All Classes Here ---------------------------------------
 import User from './classes/user';
-
+import Gallery from './classes/gallery';
 
 
 
@@ -42,8 +42,9 @@ class App {
         this.container = document.getElementById('container');
     }
     eventListeners(){
+        let self = this;
         this.container.addEventListener('click', ()=>{
-            console.log('Clicked on Container');
+            self.consoleUser();    
         })
     }
 }
