@@ -1,6 +1,6 @@
 .git/
 .idea/
-./nginx-conf/ssl/
+/nginx-conf/ssl/
 ./app/node_modules/
 /database/
 .env
