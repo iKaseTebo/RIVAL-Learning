@@ -15,4 +15,4 @@ use Illuminate\Http\Request;
 Route::get('/', 'indexController@index')->name('index');
 Route::get('/test-route', 'indexController@test' )->name('test');
 Route::get('/zalneor/get', 'zalneorController@index')->name('zalneor');
-Route::get('/photos/get', 'zalneorController@index')->name('photos.get');
+Route::get('/photos/get', 'photosController@index')->name('photos.get');

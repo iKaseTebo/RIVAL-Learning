@@ -9,7 +9,6 @@ export default class User {
         let self = this;
         axios.get(route('test')['template'])
             .then(function(response){
-                console.log(response);
                 self.first_name = response['data']['data']['first_name'];
                 self.last_name = response['data']['data']['last_name'];
                 self.age = response['data']['data']['age'];

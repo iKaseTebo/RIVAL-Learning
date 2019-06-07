@@ -1,4 +1,4 @@
-<header class="nk-header nk-header-opaque">
+<header id="app-header" class="nk-header nk-header-opaque">
 
 
 

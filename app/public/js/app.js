@@ -378,6 +378,12 @@ module.exports = {
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(13);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -479,13 +485,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
-/* 3 */,
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(13);
-
-/***/ }),
+/* 4 */,
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -740,9 +740,9 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-__webpack_require__(32);
-__webpack_require__(33);
-module.exports = __webpack_require__(34);
+__webpack_require__(34);
+__webpack_require__(35);
+module.exports = __webpack_require__(36);
 
 
 /***/ }),
@@ -752,9 +752,9 @@ module.exports = __webpack_require__(34);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__classes_user__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_test_module__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_pages__ = __webpack_require__(78);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -775,40 +775,40 @@ var App = function () {
     function App(window, document, axios) {
         _classCallCheck(this, App);
 
-        this.activeUser = null;
         this.elements();
+        Object(__WEBPACK_IMPORTED_MODULE_2__modules_pages__["a" /* initializePages */])(this);
+        this.setUser();
         this.init();
     }
 
     _createClass(App, [{
         key: 'init',
         value: function init() {
-            this.setUser();
             this.eventListeners();
-        }
-    }, {
-        key: 'setUser',
-        value: function setUser() {
-            var self = this;
-            self.activeUser = new __WEBPACK_IMPORTED_MODULE_0__classes_user__["a" /* default */](this);
-        }
-    }, {
-        key: 'consoleUser',
-        value: function consoleUser() {
-            console.log(this.activeUser);
         }
     }, {
         key: 'elements',
         value: function elements() {
-            this.container = document.getElementById('container');
+            this.$body = document.getElementsByTagName('body')[0];
+            this.header = document.getElementById('app-header');
+            this.footer = document.getElementById('app-footer');
         }
     }, {
         key: 'eventListeners',
         value: function eventListeners() {
             var self = this;
-            this.container.addEventListener('click', function () {
-                self.consoleUser();
-            });
+            this.$body.addEventListener('click', self.consoleLog);
+        }
+    }, {
+        key: 'setUser',
+        value: function setUser() {
+            var self = this;
+            self._activeUser = new __WEBPACK_IMPORTED_MODULE_0__classes_user__["a" /* default */](self);
+        }
+    }, {
+        key: 'consoleLog',
+        value: function consoleLog() {
+            console.log('testing');
         }
     }]);
 
@@ -826,7 +826,7 @@ document.onreadystatechange = function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -844,7 +844,6 @@ var User = function () {
         this.age = null;
         var self = this;
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(route('test')['template']).then(function (response) {
-            console.log(response);
             self.first_name = response['data']['data']['first_name'];
             self.last_name = response['data']['data']['last_name'];
             self.age = response['data']['data']['age'];
@@ -880,7 +879,7 @@ var User = function () {
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(5);
 var Axios = __webpack_require__(15);
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 
 /**
  * Create an instance of Axios
@@ -953,7 +952,7 @@ module.exports = function isBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(24);
 var dispatchRequest = __webpack_require__(25);
@@ -1639,7 +1638,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(26);
 var isCancel = __webpack_require__(8);
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 var isAbsoluteURL = __webpack_require__(27);
 var combineURLs = __webpack_require__(28);
 
@@ -1894,32 +1893,263 @@ module.exports = function spread(callback) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export consoleLog */
-/**
- * Created by iKase on 6/4/2019.
- */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__photo__ = __webpack_require__(32);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function consoleLog($x) {
-  return $x;
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var Gallery = function () {
+    function Gallery(App) {
+        _classCallCheck(this, Gallery);
+
+        this._App = App;
+        this._photos = [];
+        this._pagination = [];
+        this.elements();
+        if (this._galleryContainer) {
+            this.init();
+        }
+    }
+
+    _createClass(Gallery, [{
+        key: 'init',
+        value: function init() {
+            console.log('Initializing Gallery..');
+            this.generateGallery();
+        }
+    }, {
+        key: 'elements',
+        value: function elements() {
+            this._galleryContainer = document.getElementById('gallery-container');
+            this._gallerySection = document.querySelector('#gallery-section');
+            this._imageTemplate = document.querySelector('.gallery-image-template-div');
+        }
+    }, {
+        key: 'generateGallery',
+        value: function generateGallery() {
+            var self = this;
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(route('photos.get')['template']).then(function (res) {
+                res['data'].forEach(function (value) {
+                    var newPhoto = new __WEBPACK_IMPORTED_MODULE_1__photo__["a" /* default */](value, false);
+                    self._photos.push(newPhoto);
+                });
+            }).catch(function (error) {
+                console.log(error);
+            }).finally(function () {
+                if (self._photos) {
+                    self.listPhotos();
+                }
+            });
+        }
+    }, {
+        key: 'listPhotos',
+        value: function listPhotos() {
+            var self = this;
+            self._photos.forEach(function (value) {
+                self.newGalleryPhoto(value);
+            });
+        }
+    }, {
+        key: 'newGalleryPhoto',
+        value: function newGalleryPhoto(photo) {
+            var self = this;
+            var newGalleryImage = self._imageTemplate.cloneNode(true);
+
+            newGalleryImage.className = "gallery-image-div";
+            newGalleryImage.setAttribute('id', 'gallery-image-div-' + photo.id);
+
+            var imageId = newGalleryImage.querySelector('.template-image-id');
+            var imageSrc = newGalleryImage.querySelector('.template-image-source');
+            var imageTxt = newGalleryImage.querySelector('.template-image-text');
+
+            imageId.setAttribute('id', 'image-id-' + photo.id);
+            imageId.className = '';
+            var idNode = document.createTextNode(photo.id);
+            imageId.appendChild(idNode);
+
+            imageSrc.setAttribute('id', 'image-source-' + photo.id);
+            imageSrc.className = '';
+            var srcNode = document.createTextNode(photo.source);
+            imageSrc.appendChild(srcNode);
+
+            imageTxt.setAttribute('id', 'image-text-' + photo.id);
+            imageTxt.className = '';
+            var txtNode = document.createTextNode(photo.text);
+            imageTxt.appendChild(txtNode);
+
+            self._gallerySection.appendChild(newGalleryImage);
+        }
+
+        //  Getters
+
+    }, {
+        key: 'photos',
+        get: function get() {
+            return this._photos;
+        }
+
+        //  Setters
+        ,
+        set: function set(pics) {
+            this._photos = pics;
+        }
+    }]);
+
+    return Gallery;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Gallery);
 
 /***/ }),
 /* 32 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Photo = function () {
+	function Photo(pic, download) {
+		_classCallCheck(this, Photo);
+
+		this._id = pic.id;
+		this._source = pic.source;
+		this._text = pic.text;
+		this._downloadable = download;
+	}
+
+	//	Getters
+
+
+	_createClass(Photo, [{
+		key: "source",
+		get: function get() {
+			return this._source;
+		},
+
+
+		//	Setters
+		set: function set(src) {
+			this._source = src;
+		}
+	}, {
+		key: "id",
+		get: function get() {
+			return this._id;
+		},
+		set: function set(id) {
+			this._id = id;
+		}
+	}, {
+		key: "text",
+		get: function get() {
+			return this._text;
+		},
+		set: function set(txt) {
+			this._text = txt;
+		}
+	}, {
+		key: "downloadable",
+		get: function get() {
+			return this._downloadable;
+		},
+		set: function set(down) {
+			this._downloadable = down;
+		}
+	}]);
+
+	return Photo;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Photo);
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
+/* 33 */,
 /* 34 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = initializePages;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__classes_gallery__ = __webpack_require__(31);
+
+
+function initializePages(App) {
+    initGallery(App);
+    initIndex(App);
+}
+
+function initIndex(App) {
+    console.log('Index');
+}
+function initGallery(App) {
+    var self = App;
+    self.gallery = new __WEBPACK_IMPORTED_MODULE_0__classes_gallery__["a" /* default */](self);
+}
 
 /***/ })
 /******/ ]);

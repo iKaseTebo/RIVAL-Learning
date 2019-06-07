@@ -19,6 +19,14 @@ class photosController extends Controller
 				'text' => 'this is picture two text',
 			]
 		];
-		return compact('data');
+
+
+		dd($data[0]);
+
+		dd($data['picture1']['source']);
+
+
+
+		return $data;
 	}
 }

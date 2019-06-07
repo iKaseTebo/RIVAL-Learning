@@ -1,13 +1,13 @@
 // Import All Classes Here ---------------------------------------
 import User from './classes/user';
-import Gallery from './classes/gallery';
+
 
 
 
 
 // Import All Modules Here ---------------------------------------
 import axios from 'axios';
-import * as testModule from './modules/test-module';
+import { initializePages }  from './modules/pages';
 
 
 
@@ -23,29 +23,30 @@ import * as testModule from './modules/test-module';
 class App {
 
     constructor(window, document, axios) {
-        this.activeUser = null;
         this.elements();
+        initializePages(this);
+        this.setUser();
         this.init();
     }
     init(){
-        this.setUser();
         this.eventListeners();
-    }
-    setUser(){
-        let self = this;
-        self.activeUser = new User(this);
-    }
-    consoleUser(){
-        console.log(this.activeUser);
+
     }
     elements(){
-        this.container = document.getElementById('container');
+        this.$body = document.getElementsByTagName('body')[0];
+        this.header = document.getElementById('app-header');
+        this.footer = document.getElementById('app-footer');
     }
     eventListeners(){
         let self = this;
-        this.container.addEventListener('click', ()=>{
-            self.consoleUser();    
-        })
+        this.$body.addEventListener('click', self.consoleLog)
+    }
+    setUser(){
+        let self = this;
+        self._activeUser = new User(self);
+    }
+    consoleLog(){
+        console.log('testing');
     }
 }
 

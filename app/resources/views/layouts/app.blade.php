@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="{{asset('css/goodgames.css')}}">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
     <!-- END: Styles -->
 
@@ -61,7 +61,6 @@
 @endif
 
 @yield('content')
-
 
 @if(Route::getCurrentRoute()->getName() !== 'zalneor')
     @include('partials._footer')

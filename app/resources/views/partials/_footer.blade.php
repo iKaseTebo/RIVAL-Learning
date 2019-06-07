@@ -1,4 +1,4 @@
-<footer class="nk-footer">
+<footer id="app-footer" class="nk-footer">
 
     <div class="container">
         <div class="nk-gap-3"></div>
